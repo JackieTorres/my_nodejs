@@ -8,7 +8,7 @@ const port = 8080;
 const pool = mysql2.createPool({
     host: 'localhost',
     user: 'root', // 替换为你的 MySQL 用户名
-    password: '123456', // 替换为你的 MySQL 密码
+    password: '123456789', // 替换为你的 MySQL 密码
     database: 'torres', // 替换为你要使用的数据库名称
     waitForConnections: true,
     connectionLimit: 10,
