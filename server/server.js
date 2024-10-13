@@ -1,5 +1,6 @@
 const express = require('express');
 const mysql2 = require('mysql2');
+const path = require('path'); // 引入path模块来处理路径
 
 const app = express();
 const port = 8080;
@@ -29,11 +30,12 @@ pool.query(`
 
 app.use(express.json()); // 使用中间件解析请求体
 
-// 一个根路由
-app.get('/', (req, res) => {
-    res.send('Hello, world!');
-});
+// 假设您的前端项目构建后的静态文件放置在当前目录下
+app.use(express.static(path.join(__dirname)));
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // 获取所有 todo
 app.get('/todos', (req, res) => {

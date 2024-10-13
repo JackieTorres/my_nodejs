@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test POST Request</title>
+    <title>todos</title>
   </head>
   <body>
-    <button id="addTodo">Add Todo</button>
+    <label for="single-line">todo处理</label>
+    <input id="addInput" type="text" placeholder="输入一个todo" />
+    <button id="addTodo">增加一个todo</button>
 
-    <script>
-      document.getElementById("addTodo").addEventListener("click", () => {
-        fetch("/todos", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ title: "去买一瓶酱油", completed: false }),
-        })
-          .then((response) => response.json())
-          .then((data) => console.log(data))
-          .catch((error) => console.error("Error:", error));
-      });
-    </script>
+    <input id="viewInput" type="text" placeholder="输入要查看的todo的ID" />
+    <button id="viewTodo">看看一个todo</button>
+
+    <input id="deleteInput" type="text" placeholder="输入要删除的todo的ID" />
+    <button id="deleteTodo">删除一个todo</button>
+
+    <button id="allTodos">查看所有todos</button>
+
+    <label for="multi-line">todo输出</label>
+    <textarea
+      id="output"
+      rows="4"
+      cols="50"
+      placeholder="在这里输出todos"
+    ></textarea>
+    <script src="./index.js"></script>
   </body>
 </html>
