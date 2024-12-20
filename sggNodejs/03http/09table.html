@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+    <style>
+      td {
+        width: 200px;
+        height: 100px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      table tr:nth-child(odd) {
+        background-color: rgb(255, 146, 206);
+      }
+      table tr:nth-child(even) {
+        background-color: rgb(162, 241, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <script>
+      let tds = document.querySelectorAll("td");
+      tds.forEach((item) => {
+        item.onclick = function () {
+          this.style.backgroundColor = "#000";
+        };
+      });
+    </script>
+  </body>
+</html>
