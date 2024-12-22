@@ -7,8 +7,5 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "uniq": "^1.0.1"
-  }
+  "description": ""
 }
