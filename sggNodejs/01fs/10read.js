@@ -17,7 +17,9 @@ fs.stat("./06rw.js", (err, data) => {
   // console.log(today.split("-"));
   var str = "Apple, Banana, Mango";
   var res = str.slice(7, 13);
+  var tt = today.slice(1);
   console.log(res);
+  console.log(tt);
 });
 
 // let time = new Date();

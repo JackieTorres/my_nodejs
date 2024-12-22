@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
     fs.readFile(filePath, (err, data) => {
       if (err) {
         res.statusCode = 500;
-        res.end("page not found.");
+        res.end("page not found. :)");
         return;
       }
       res.end(data);
