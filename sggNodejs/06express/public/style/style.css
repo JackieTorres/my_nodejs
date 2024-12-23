@@ -1,0 +1,158 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+ol,
+ul,
+li,
+form,
+table,
+tr,
+th,
+td {
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  width: auto;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgb(235, 82, 255), rgb(59, 232, 255));
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 3vh;
+  background-color: #ffffff;
+  padding: 1.2vw 4vw;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 90vh;
+  padding: 2vw 4vw;
+  background-color: transparent;
+}
+
+.footer {
+  display: flex;
+  height: 25vh;
+  background-color: transparent;
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+}
+.logo img {
+  width: 5vw;
+}
+.nav {
+  display: flex;
+}
+.nav a {
+  padding: 2vw 2vw;
+  color: #555555;
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav a:hover {
+  color: orange;
+}
+
+.footer p {
+  color: #007ea5;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.footer p a {
+  color: #007ea5;
+  text-decoration: none;
+}
+
+.main h1 {
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  margin: 40px 0;
+}
+.typed-out {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* 打字效果 */
+
+/* .typed-out {
+  overflow: hidden;
+  border-right: 5px solid orange;
+  white-space: nowrap;
+  font-size: 48px;
+  width: 0;
+  animation: typing 1s steps(6, end) forwards, blink 0.8s infinite;
+}
+.container {
+  display: inline-block;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: orange;
+  }
+} */
+
+.typewriter-container {
+  display: inline-flex;
+  align-items: center;
+}
+
+#typewriter {
+  color: #ffffff;
+  font-size: 4vmax;
+  font-weight: bold;
+}
+
+.cursor {
+  font-size: 4vmax;
+  font-weight: bold;
+  color: orange;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

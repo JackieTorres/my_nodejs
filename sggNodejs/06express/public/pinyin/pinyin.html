@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>拼音转换小工具</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="JackieTorres" />
+    <link rel="icon" href="../favicon.png" type="image/png" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <link rel="stylesheet" href="./pinyin.css" />
+    <script type="text/javascript" src="./pinyin-pro@3.26.0.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo"><img src="../favicon.png" /></div>
+      <nav class="nav">
+        <a href="../index.html">首页</a> <a href="./pinyin/index.html">拼音</a>
+        <a href="../data">文件</a>
+      </nav>
+    </header>
+    <main class="pinyin">
+      <span class="title">
+        中文拼音转换
+        <span id="var">v0.1Alpha</span>
+      </span>
+      <h3>在下面输入中文后会自动转为拼音</h3>
+      <div class="input-group">
+        <textarea
+          id="input"
+          rows="4"
+          cols="50"
+          placeholder="请在这里输入要转换的文字"
+        ></textarea>
+        <textarea
+          id="output"
+          rows="4"
+          cols="50"
+          placeholder="文字拼音结果在这里输出"
+          readonly
+        ></textarea>
+      </div>
+      <div class="buts">
+        <button id="convert">转换</button>
+        <button id="cls">清空</button>
+        <button id="copy">复制</button>
+      </div>
+    </main>
+    <script type="text/javascript" src="./pinyin.js"></script>
+  </body>
+</html>

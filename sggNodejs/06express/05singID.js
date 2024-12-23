@@ -13,7 +13,8 @@ app.get("/singer/:id.html", (req, res) => {
     res.end("no singer");
   }
 
-  res.end(`<!DOCTYPE html>
+  res.end(`
+  <!DOCTYPE html>
   <html lang="zh_cn">
     <head>
       <meta charset="UTF-8" />
