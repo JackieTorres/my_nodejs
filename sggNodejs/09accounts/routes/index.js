@@ -7,10 +7,14 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/accounts", (req, res) => {
-  res.send("账本列表");
+  res.render("list");
 });
 router.get("/accounts/create", (req, res) => {
-  res.send("添加记录");
+  res.render("create");
+});
+router.post("/accounts", (req, res) => {
+  console.log(req.body);
+  res.send("添加成功");
 });
 
 module.exports = router;
