@@ -1,3 +1,20 @@
 {
-  "accounts": []
+  "accounts": [
+    {
+      "id": "SJuN63oAb",
+      "title": "破碎大锤",
+      "time": "2025-01-03",
+      "types": "-1",
+      "account": "5890",
+      "remarks": "一锤定音~"
+    },
+    {
+      "id": "Nt_OOIJ-L",
+      "title": "暗影双刺",
+      "time": "2025-01-03",
+      "types": "-1",
+      "account": "1688",
+      "remarks": "咻咻咻~"
+    }
+  ]
 }

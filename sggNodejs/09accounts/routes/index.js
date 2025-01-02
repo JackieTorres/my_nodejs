@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
-
+const shortid = require("shortid");
 const adapter = new FileSync(__dirname + "/../data/db.json");
 const db = low(adapter);
 
@@ -18,7 +18,10 @@ router.get("/accounts/create", (req, res) => {
   res.render("create");
 });
 router.post("/accounts", (req, res) => {
-  console.log(req.body);
+  let id = shortid.generate();
+  db.get("accounts")
+    .unshift({ id: id, ...req.body })
+    .write();
   res.send("添加成功");
 });
 
