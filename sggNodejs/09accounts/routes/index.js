@@ -12,7 +12,8 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/accounts", (req, res) => {
-  res.render("list");
+  let accounts = db.get("accounts").value();
+  res.render("list", { accounts: accounts });
 });
 router.get("/accounts/create", (req, res) => {
   res.render("create");
@@ -22,7 +23,12 @@ router.post("/accounts", (req, res) => {
   db.get("accounts")
     .unshift({ id: id, ...req.body })
     .write();
-  res.send("添加成功");
+  res.render("success", { msg: "添加成功！", url: "/accounts" });
+});
+router.get("/accounts/:id", (req, res) => {
+  let id = req.params.id;
+  db.get("accounts").remove({ id: id }).write();
+  res.render("success", { msg: "删除成功！", url: "/accounts" });
 });
 
 module.exports = router;

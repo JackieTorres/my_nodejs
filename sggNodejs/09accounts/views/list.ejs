@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>记账本</title>
     <link href="/stylesheets/bootstrap.css" rel="stylesheet" />
     <style>
       label {
@@ -23,40 +23,34 @@
       <div class="row">
         <div class="col-xs-12 col-lg-8 col-lg-offset-2">
           <h2>记账本</h2>
+          <h5><a href="/accounts/create">添加记录</a></h5>
           <hr />
           <div class="accounts">
-            <div class="panel panel-danger">
-              <div class="panel-heading">2023-04-05</div>
+            <% accounts.forEach(item => { %>
+            <div
+              class="panel <%= item.types==='-1' ? 'panel-danger' : 'panel-success' %>"
+            >
+              <div class="panel-heading"><%= item.time %></div>
               <div class="panel-body">
-                <div class="col-xs-6">抽烟只抽煊赫门，一生只爱一个人</div>
+                <div class="col-xs-6"><%= item.title %></div>
                 <div class="col-xs-2 text-center">
-                  <span class="label label-warning">支出</span>
-                </div>
-                <div class="col-xs-2 text-right">25 元</div>
-                <div class="col-xs-2 text-right">
                   <span
-                    class="glyphicon glyphicon-remove"
-                    aria-hidden="true"
-                  ></span>
+                    class="label <%= item.types==='-1' ? 'label-warning' : 'label-success' %>"
+                    ><%= item.types==='-1' ? '支出' : '收入' %></span
+                  >
+                </div>
+                <div class="col-xs-2 text-right"><%= item.account %> 元</div>
+                <div class="col-xs-2 text-right">
+                  <a href="/accounts/<%= item.id %>">
+                    <span
+                      class="glyphicon glyphicon-remove"
+                      aria-hidden="true"
+                    ></span>
+                  </a>
                 </div>
               </div>
             </div>
-            <div class="panel panel-success">
-              <div class="panel-heading">2023-04-15</div>
-              <div class="panel-body">
-                <div class="col-xs-6">3 月份发工资</div>
-                <div class="col-xs-2 text-center">
-                  <span class="label label-success">收入</span>
-                </div>
-                <div class="col-xs-2 text-right">4396 元</div>
-                <div class="col-xs-2 text-right">
-                  <span
-                    class="glyphicon glyphicon-remove"
-                    aria-hidden="true"
-                  ></span>
-                </div>
-              </div>
-            </div>
+            <% }) %>
           </div>
         </div>
       </div>
